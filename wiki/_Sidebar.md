@@ -1,0 +1,8 @@
+- [Home](Home.md)
+- [Installation](Installation.md)
+- [Visual GUI guide](GUI-Guide.md)
+- [Rules and YAML](Rules-and-YAML.md)
+- [Commands and permissions](Commands-and-Permissions.md)
+- [Integrations](Integrations.md)
+- [Troubleshooting](Troubleshooting.md)
+- [Guía rápida ES](Guia-Rapida-ES.md)

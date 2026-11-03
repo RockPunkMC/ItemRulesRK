@@ -1,0 +1,5 @@
+# Rules created and applied through the in-game editor.
+# Manual rules remain in rules.yml and are never rewritten by the GUI.
+rules-version: 4
+rules:
+  # Applied GUI rules are written below. An empty section means none exist yet.

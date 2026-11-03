@@ -1,0 +1,114 @@
+# ============================================================
+#                         ItemRulesRK
+# ============================================================
+# Item usage and restriction engine.
+# Use /itemrules reload after editing. Do not use Bukkit /reload.
+
+# Internal schema version. Do not change manually.
+config-version: 4
+
+# Loads general and GUI text from locale/messages_<language>.yml and
+# locale/messages_gui_<language>.yml. English and Spanish are bundled.
+language: "en"
+
+language-settings:
+  # Uses the Minecraft client locale when a matching locale file exists.
+  use-client-locale: false
+  # Missing keys always fall back to this bundled language.
+  fallback: "en"
+
+gui:
+  # Enables the in-game rule editor and administrative menus.
+  enabled: true
+  # Seconds before an unfinished chat input expires. Drafts are not deleted.
+  chat-input-timeout: 60
+  # Maximum undo steps retained per draft during the current runtime.
+  undo-limit: 50
+  # Prevents two administrators from applying the same draft concurrently.
+  edit-lock-seconds: 300
+
+retention:
+  # Days before deleted GUI rules may be purged. -1 keeps them forever.
+  trash-days: 30
+  # Maximum applied revisions retained per GUI rule.
+  history-revisions: 25
+  # Days to retain administrative audit entries.
+  audit-days: 90
+  # Completed and rolled-back transaction journals older than this are removed.
+  # Interrupted journals are always preserved until recovery succeeds. Use -1 to keep all.
+  transaction-days: 7
+
+limits:
+  maximum-rules: 10000
+  maximum-groups: 1000
+  maximum-rules-per-group: 10000
+  maximum-list-values: 10000
+  maximum-commands-per-rule: 100
+  maximum-command-length: 1024
+  maximum-message-length: 4096
+  maximum-lore-lines: 100
+  maximum-value-length: 256
+  maximum-yaml-depth: 32
+  maximum-import-bytes: 1048576
+
+# Enables additional technical diagnostics when true.
+debug: false
+
+hooks:
+  # Enables WorldGuard region conditions when WorldGuard is installed.
+  worldguard: true
+  # Enables PlaceholderAPI conditions when PlaceholderAPI is installed.
+  placeholderapi: true
+  # true applies region restrictions when WorldGuard unexpectedly fails.
+  # false skips the affected region restriction (less secure).
+  fail-closed: true
+
+rule-engine:
+  # Default priority used when a rule omits priority.
+  default-priority: 0
+  # true stops after the first matching rule unless overridden per rule.
+  stop-processing-default: false
+
+bypass:
+  # Rules apply to OP players unless this is explicitly true.
+  op: false
+  # Rules apply to Creative players unless this is explicitly true.
+  creative: false
+
+cooldowns:
+  # false saves only cooldowns whose rule has persist: true.
+  # true saves every active cooldown during a clean shutdown.
+  persist-after-restart: false
+
+notifications:
+  # Suppresses repeated messages but never stops rule enforcement.
+  anti-spam: true
+  # Minimum delay between repeated messages, in milliseconds.
+  interval: 500
+
+errors:
+  # Minimum seconds between repeated console warnings for the same rule/action.
+  # Enforcement continues and later actions still run after an isolated failure.
+  action-log-interval-seconds: 60
+
+statistics:
+  # Enables lightweight in-memory counters.
+  enabled: true
+
+combat:
+  # Seconds after PvP damage during which combat conditions are true.
+  tag-duration: 15
+
+metrics:
+  # Requires a real bStats plugin ID assigned to ItemRulesRK.
+  # No data is sent while disabled or while plugin-id is 0.
+  # Changes require a complete server restart.
+  enabled: false
+  plugin-id: 0
+
+updates:
+  # Performs a lightweight asynchronous HTTPS version check only.
+  # It never downloads or installs files.
+  enabled: false
+  url: ""
+  check-interval-hours: 12

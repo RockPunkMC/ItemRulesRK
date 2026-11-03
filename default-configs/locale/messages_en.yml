@@ -1,0 +1,85 @@
+messages-version: 2
+prefix: "<#82C2FF><bold>ITEMRULES</bold> <dark_gray>» "
+no-permission: "{prefix}<red>You do not have permission."
+player-only: "{prefix}<red>This command can only be used by a player."
+invalid-syntax: "{prefix}<red>Invalid syntax. Use <white>/itemrules help<red>."
+usage: "{prefix}<red>Usage: <white>{syntax}"
+operation-failed: "{prefix}<red>Operation failed: <white>{error}"
+safe-mode-read-only: "{prefix}<red>Administrative writes are disabled because transaction recovery failed. Check the console and data/transactions."
+status: "<aqua><bold>ItemRulesRK <gray>v{version} <dark_gray>| <white>{rules} rules <dark_gray>| <gray>RockPunk"
+term:
+  permanent: "permanent"
+  active-snapshot: "the active snapshot"
+  disabled: "disabled"
+  none: "none"
+list:
+  header: "<aqua>ItemRulesRK Rules <gray>({page}/{pages})"
+  entry-enabled: "<green>✓ <white>{rule} <gray>[{priority}]"
+  entry-disabled: "<red>✗ <white>{rule} <gray>[{priority}]"
+info:
+  header: "<aqua>{rule}"
+  state: "<gray>Enabled: <white>{enabled} <dark_gray>| <gray>Priority: <white>{priority} <dark_gray>| <gray>Stop: <white>{stop}"
+  item: "<gray>Item: <white>{item} <dark_gray>| <gray>Triggers: <white>{triggers}"
+  provider: "<gray>Provider: <white>{provider}"
+  cooldown: "<gray>Cooldown: <white>{cooldown}"
+doctor:
+  header: "<aqua>ItemRulesRK Doctor"
+  summary: "<green>✓ <white>{rules} rules loaded; {active} active. <gray>Mode: <white>{mode}"
+  recovery-failures: "{prefix}<red>Unresolved transaction recoveries: <white>{count}<red>. Inspect data/transactions."
+test:
+  header: "<aqua>ItemRulesRK Dry Run"
+  context: "<gray>Trigger: <white>{trigger} <dark_gray>| <gray>Item: <white>{item} <dark_gray>| <gray>Hand: <white>{hand}"
+  world: "<gray>World: <white>{world}"
+  matched: "<gray>Matched: <white>{rules}"
+  actions: "<gray>Actions: <white>{actions}"
+stats:
+  header: "<aqua>ItemRulesRK Statistics"
+  entry: "<white>{rule} <gray>matches={matches}, executions={executions}, blocked={blocked}, cooldown={cooldown}"
+reload:
+  success: "{prefix}<green>Configuration reloaded: <white>{rules}<green> loaded, <white>{active}<green> active."
+  failed: "{prefix}<red>The new configuration has critical errors. The previous snapshot remains active."
+draft:
+  saved: "{prefix}<green>Draft <white>{rule}<green> saved."
+  discarded: "{prefix}<yellow>Draft <white>{rule}<yellow> discarded."
+  applied: "{prefix}<green>Rule <white>{rule}<green> was validated and applied."
+  invalid-id: "{prefix}<red>Use 1-64 lowercase letters, numbers, hyphens or underscores."
+  prompt-id: "{prefix}<yellow>Type the new rule ID in chat, or type <white>cancel<yellow>."
+  list-own: "{prefix}<yellow>Your drafts <gray>({count}): <white>{rules}"
+  list-all: "{prefix}<yellow>All drafts: <white>{count}"
+  console-owner: "{prefix}<red>Console cannot own a private draft."
+rule:
+  not-found: "{prefix}<red>Rule <white>{rule}<red> does not exist."
+group:
+  not-found: "{prefix}<red>Group <white>{group}<red> does not exist."
+  enabled: "{prefix}<green>Group enabled: <white>{group}"
+  disabled: "{prefix}<red>Group disabled: <white>{group}"
+gui:
+  disabled: "{prefix}<red>The GUI is disabled in config.yml."
+  player-only: "{prefix}<red>The GUI cannot open in console. Use the textual administration commands."
+export:
+  success: "{prefix}<green>Exported to <white>{file}"
+import:
+  player-only: "{prefix}<red>Import creates private drafts and must be run by a player."
+  success: "{prefix}<green>Imported as disabled drafts: <white>{rules}"
+exception:
+  cleared: "{prefix}<green>Cleared every exception for <white>{player}<green>."
+  duration-required: "{prefix}<red>Provide a duration such as 30s, 10m, 2h, 1d, permanent or clear."
+  removed: "{prefix}<green>Exception removed."
+  granted: "{prefix}<green>Exception granted to <white>{player}<green> for <white>{duration}<green>."
+validate:
+  passed: "{prefix}<green>Validation passed for <white>{target}<green>."
+  result: "{prefix}<yellow>Validation result: <red>{errors} errors<yellow>, <gold>{warnings} warnings<yellow>."
+history:
+  header: "{prefix}<yellow>History for <white>{rule} <gray>({count})"
+  entry: "<gray>- <white>{file}"
+help:
+  line-1: "<aqua><bold>ItemRulesRK commands"
+  line-2: "<white>/itemrules gui <gray>- graphical administration"
+  line-3: "<white>/itemrules list|info|validate|test <gray>- inspect rules"
+  line-4: "<white>/itemrules draft|history|import|export <gray>- manage rule data"
+  line-5: "<white>/itemrules doctor|stats|group|exception|reload <gray>- administration"
+cooldown:
+  active: "{prefix}<gray>Wait <yellow>{time}s <gray>before using this again."
+inventory:
+  limit-reached: "{prefix}<red>You cannot carry more than <white>{maximum}x {item}<red>."
+  limit-reconciled: "{prefix}<yellow>{amount} excess {item} item(s) were removed. Maximum: <white>{maximum}<yellow>."

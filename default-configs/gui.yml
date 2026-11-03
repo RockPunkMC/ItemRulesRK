@@ -1,0 +1,119 @@
+# ============================================================
+#                    ITEMRULESRK GUI
+# ============================================================
+# Visual settings only. Rule behavior belongs in rule files.
+# Invalid values fall back per component without disabling the engine.
+gui-version: 2
+theme:
+  # Material used around every menu. Invalid materials fall back safely.
+  border-material: BLACK_STAINED_GLASS_PANE
+  # Material used for the four border accents.
+  accent-material: LIGHT_BLUE_STAINED_GLASS_PANE
+sounds:
+  # Sound played when an ItemRulesRK menu opens.
+  open: UI_BUTTON_CLICK
+layouts:
+  # Inventory sizes must be 9, 18, 27, 36, 45 or 54. A value smaller than the
+  # built-in safe layout falls back without disabling the editor.
+  main:
+    size: 36
+    # Slots use Bukkit's zero-based inventory indexes.
+    slots:
+      status: 4
+      create: 11
+      rules: 13
+      drafts: 15
+      groups: 20
+      diagnostics: 22
+      help: 24
+      archive: 28
+      trash: 29
+      statistics: 31
+      exceptions: 33
+      close: 35
+    # Invalid or unavailable materials fall back per icon.
+    icons:
+      status: NETHER_STAR
+      create: CRAFTING_TABLE
+      rules: BOOKSHELF
+      drafts: WRITABLE_BOOK
+      groups: CHEST
+      diagnostics: COMPARATOR
+      help: PAPER
+      archive: ENDER_CHEST
+      trash: CAULDRON
+      statistics: FILLED_MAP
+      exceptions: PLAYER_HEAD
+      close: BARRIER
+  create:
+    size: 27
+  rules:
+    size: 54
+  detail:
+    size: 45
+  history:
+    size: 54
+  trash:
+    size: 54
+  archive:
+    size: 54
+  stored_actions:
+    size: 27
+  stats:
+    size: 54
+  exceptions:
+    size: 54
+  exception_grant:
+    size: 45
+  templates:
+    size: 54
+  imports:
+    size: 54
+  import_preview:
+    size: 45
+  drafts:
+    size: 54
+  draft:
+    size: 54
+  doctor:
+    size: 54
+  help:
+    size: 45
+  confirmation:
+    size: 27
+  identity:
+    size: 45
+  object:
+    size: 54
+  triggers:
+    size: 54
+  scope:
+    size: 45
+  conditions:
+    size: 54
+  actions:
+    size: 54
+  cooldown:
+    size: 45
+  limit:
+    size: 45
+  priority:
+    size: 27
+  groups:
+    size: 54
+  draft_groups:
+    size: 54
+  permissions:
+    size: 45
+  review:
+    size: 54
+  dryrun:
+    size: 45
+  selector:
+    size: 54
+  numeric:
+    size: 45
+  placeholders:
+    size: 54
+  enchantments:
+    size: 54

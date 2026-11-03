@@ -1,0 +1,124 @@
+templates-version: 1
+templates:
+  block-item-in-world:
+    enabled: true
+    icon:
+      material: BARRIER
+    metadata:
+      category: RESTRICTION
+      featured: true
+    defaults:
+      enabled: false
+      priority: 100
+      stop-processing: true
+      triggers:
+        - RIGHT_CLICK
+      actions:
+        cancel: true
+    required-inputs:
+      - ITEM
+      - WORLD
+  item-cooldown:
+    enabled: true
+    icon:
+      material: CLOCK
+    metadata:
+      category: COOLDOWN
+      featured: true
+    defaults:
+      enabled: false
+      priority: 50
+      stop-processing: true
+      triggers:
+        - RIGHT_CLICK
+      cooldown:
+        enabled: true
+        duration: 30
+        scope: RULE
+        persist: false
+        bypass-permission: ""
+        display:
+          actionbar: true
+          message: "<#FFAA00>Wait <white>{time}s"
+    required-inputs:
+      - ITEM
+  inventory-limit:
+    enabled: true
+    icon:
+      material: HOPPER
+    metadata:
+      category: LIMIT
+      featured: true
+    defaults:
+      enabled: false
+      priority: 40
+      stop-processing: false
+      triggers:
+        - PICKUP
+      inventory-limit:
+        enabled: true
+        maximum: 16
+        count-mode: MATERIAL
+        shared-materials: []
+        excess-action: DENY_PICKUP
+    required-inputs:
+      - ITEM
+  block-item-in-region:
+    enabled: true
+    icon:
+      material: ENDER_EYE
+    metadata:
+      category: RESTRICTION
+      featured: false
+    defaults:
+      enabled: false
+      priority: 100
+      stop-processing: true
+      triggers:
+        - RIGHT_CLICK
+      conditions:
+        regions:
+          mode: WHITELIST
+          values: []
+      actions:
+        cancel: true
+    required-inputs:
+      - ITEM
+      - REGION
+  combat-restriction:
+    enabled: true
+    icon:
+      material: IRON_SWORD
+    metadata:
+      category: RESTRICTION
+      featured: false
+    defaults:
+      enabled: false
+      priority: 80
+      stop-processing: true
+      triggers:
+        - RIGHT_CLICK
+      conditions:
+        combat:
+          in-combat: true
+      actions:
+        cancel: true
+    required-inputs:
+      - ITEM
+  consume-restriction:
+    enabled: true
+    icon:
+      material: APPLE
+    metadata:
+      category: RESTRICTION
+      featured: false
+    defaults:
+      enabled: false
+      priority: 50
+      stop-processing: true
+      triggers:
+        - CONSUME
+      actions:
+        cancel: true
+    required-inputs:
+      - ITEM

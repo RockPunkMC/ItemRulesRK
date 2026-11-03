@@ -1,0 +1,29 @@
+# ============================================================
+#                         RULE GROUPS
+# ============================================================
+#
+# Groups allow several rules to be enabled or disabled together.
+# Disabling a group never deletes or rewrites a rule.
+#
+# Commands:
+# /itemrules group <group> enable
+# /itemrules group <group> disable
+#
+# Use [] only when a group intentionally contains no rules.
+#
+# ============================================================
+
+# Internal schema version. Do not remove or change manually.
+groups-version: 2
+
+groups:
+  examples:
+    # true  = Rules in this group may run.
+    # false = Every assigned rule is disabled by this group.
+    enabled: true
+    # Rule IDs from rules.yml.
+    rules:
+      - example-pearl-world
+      - example-gapple-cooldown
+      - example-item-limit
+      - example-global-rule

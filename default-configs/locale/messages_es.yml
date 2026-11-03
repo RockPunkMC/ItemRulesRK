@@ -1,0 +1,85 @@
+messages-version: 2
+prefix: "<#82C2FF><bold>ITEMRULES</bold> <dark_gray>» "
+no-permission: "{prefix}<red>No tienes permiso."
+player-only: "{prefix}<red>Este comando solo puede usarlo un jugador."
+invalid-syntax: "{prefix}<red>Sintaxis inválida. Usa <white>/itemrules help<red>."
+usage: "{prefix}<red>Uso: <white>{syntax}"
+operation-failed: "{prefix}<red>La operación falló: <white>{error}"
+safe-mode-read-only: "{prefix}<red>Las escrituras administrativas están desactivadas porque falló la recuperación de una transacción. Revisa la consola y data/transactions."
+status: "<aqua><bold>ItemRulesRK <gray>v{version} <dark_gray>| <white>{rules} reglas <dark_gray>| <gray>RockPunk"
+term:
+  permanent: "permanente"
+  active-snapshot: "la configuración activa"
+  disabled: "desactivado"
+  none: "ninguno"
+list:
+  header: "<aqua>Reglas de ItemRulesRK <gray>({page}/{pages})"
+  entry-enabled: "<green>✓ <white>{rule} <gray>[{priority}]"
+  entry-disabled: "<red>✗ <white>{rule} <gray>[{priority}]"
+info:
+  header: "<aqua>{rule}"
+  state: "<gray>Activada: <white>{enabled} <dark_gray>| <gray>Prioridad: <white>{priority} <dark_gray>| <gray>Detener: <white>{stop}"
+  item: "<gray>Objeto: <white>{item} <dark_gray>| <gray>Activadores: <white>{triggers}"
+  provider: "<gray>Proveedor: <white>{provider}"
+  cooldown: "<gray>Cooldown: <white>{cooldown}"
+doctor:
+  header: "<aqua>Diagnóstico de ItemRulesRK"
+  summary: "<green>✓ <white>{rules} reglas cargadas; {active} activas. <gray>Modo: <white>{mode}"
+  recovery-failures: "{prefix}<red>Recuperaciones de transacciones sin resolver: <white>{count}<red>. Revisa data/transactions."
+test:
+  header: "<aqua>Prueba en seco de ItemRulesRK"
+  context: "<gray>Activador: <white>{trigger} <dark_gray>| <gray>Objeto: <white>{item} <dark_gray>| <gray>Mano: <white>{hand}"
+  world: "<gray>Mundo: <white>{world}"
+  matched: "<gray>Coincidencias: <white>{rules}"
+  actions: "<gray>Acciones: <white>{actions}"
+stats:
+  header: "<aqua>Estadísticas de ItemRulesRK"
+  entry: "<white>{rule} <gray>coincidencias={matches}, ejecuciones={executions}, bloqueos={blocked}, cooldown={cooldown}"
+reload:
+  success: "{prefix}<green>Configuración recargada: <white>{rules}<green> cargadas, <white>{active}<green> activas."
+  failed: "{prefix}<red>La configuración nueva tiene errores críticos. La versión anterior sigue activa."
+draft:
+  saved: "{prefix}<green>Borrador <white>{rule}<green> guardado."
+  discarded: "{prefix}<yellow>Borrador <white>{rule}<yellow> descartado."
+  applied: "{prefix}<green>La regla <white>{rule}<green> fue validada y aplicada."
+  invalid-id: "{prefix}<red>Usa 1-64 letras minúsculas, números, guiones o guion bajo."
+  prompt-id: "{prefix}<yellow>Escribe el ID de la regla en el chat, o escribe <white>cancel<yellow>."
+  list-own: "{prefix}<yellow>Tus borradores <gray>({count}): <white>{rules}"
+  list-all: "{prefix}<yellow>Total de borradores: <white>{count}"
+  console-owner: "{prefix}<red>La consola no puede ser propietaria de un borrador privado."
+rule:
+  not-found: "{prefix}<red>La regla <white>{rule}<red> no existe."
+group:
+  not-found: "{prefix}<red>El grupo <white>{group}<red> no existe."
+  enabled: "{prefix}<green>Grupo activado: <white>{group}"
+  disabled: "{prefix}<red>Grupo desactivado: <white>{group}"
+gui:
+  disabled: "{prefix}<red>La GUI está desactivada en config.yml."
+  player-only: "{prefix}<red>La GUI no puede abrirse desde consola. Usa los comandos de administración por texto."
+export:
+  success: "{prefix}<green>Exportado a <white>{file}"
+import:
+  player-only: "{prefix}<red>La importación crea borradores privados y debe ejecutarla un jugador."
+  success: "{prefix}<green>Importado como borradores desactivados: <white>{rules}"
+exception:
+  cleared: "{prefix}<green>Se eliminaron todas las excepciones de <white>{player}<green>."
+  duration-required: "{prefix}<red>Indica una duración como 30s, 10m, 2h, 1d, permanent o clear."
+  removed: "{prefix}<green>Excepción eliminada."
+  granted: "{prefix}<green>Excepción concedida a <white>{player}<green> durante <white>{duration}<green>."
+validate:
+  passed: "{prefix}<green>Validación superada para <white>{target}<green>."
+  result: "{prefix}<yellow>Resultado: <red>{errors} errores<yellow>, <gold>{warnings} advertencias<yellow>."
+history:
+  header: "{prefix}<yellow>Historial de <white>{rule} <gray>({count})"
+  entry: "<gray>- <white>{file}"
+help:
+  line-1: "<aqua><bold>Comandos de ItemRulesRK"
+  line-2: "<white>/itemrules gui <gray>- administración gráfica"
+  line-3: "<white>/itemrules list|info|validate|test <gray>- inspeccionar reglas"
+  line-4: "<white>/itemrules draft|history|import|export <gray>- administrar datos de reglas"
+  line-5: "<white>/itemrules doctor|stats|group|exception|reload <gray>- administración"
+cooldown:
+  active: "{prefix}<gray>Espera <yellow>{time}s <gray>antes de volver a usarlo."
+inventory:
+  limit-reached: "{prefix}<red>No puedes llevar más de <white>{maximum}x {item}<red>."
+  limit-reconciled: "{prefix}<yellow>Se retiraron {amount} {item} excedentes. Máximo: <white>{maximum}<yellow>."

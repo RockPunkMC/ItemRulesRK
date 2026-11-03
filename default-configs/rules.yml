@@ -1,0 +1,180 @@
+# ============================================================
+#                         ITEM RULES
+# ============================================================
+# All examples are disabled, so a fresh install changes no gameplay.
+# Missing conditions and empty lists mean ANY.
+# Values in one condition use OR; different conditions use AND.
+# Rules run from highest priority to lowest; ties preserve file order.
+# Use block lists for values. Use [] only for an intentionally empty list.
+
+# Internal schema version. Do not change manually.
+rules-version: 4
+
+rules:
+  # Blocks Ender Pearls in one world and at protected destinations.
+  example-pearl-world:
+    enabled: false
+    priority: 100
+    stop-processing: true
+    # Available values: ANY, MAIN_HAND, OFF_HAND
+    hand: ANY
+    item:
+      material: ENDER_PEARL
+      # Optional provider: ITEMSADDER, ORAXEN, NEXO or MMOITEMS.
+      # Configure provider and id together. MMOItems IDs use TYPE:ID.
+      # provider: ITEMSADDER
+      # id: namespace:item_id
+      # Empty values disable these optional item filters.
+      name: ""
+      lore: []
+      # -1 ignores CustomModelData.
+      custom-model-data: -1
+      # Optional minimum enchantment levels:
+      # enchantments:
+      #   SHARPNESS: 3
+    # Reliable triggers: RIGHT_CLICK, LEFT_CLICK, CONSUME, PLACE,
+    # DROP, PICKUP, SHOOT, THROW, BREAK, CRAFT, ENCHANT,
+    # SWAP_HAND and TOTEM_USE.
+    triggers:
+      - RIGHT_CLICK
+      - THROW
+    conditions:
+      worlds:
+        # WHITELIST matches only listed values.
+        # BLACKLIST matches everything except listed values.
+        mode: WHITELIST
+        values:
+          - world
+      # A non-empty region list requires WorldGuard.
+      regions:
+        mode: WHITELIST
+        values: []
+      gamemodes:
+        mode: WHITELIST
+        values: []
+      # These are matching conditions, not bypass permissions.
+      permissions:
+        mode: WHITELIST
+        values: []
+      # Minecraft world time from 0 to 23999. A minimum greater than
+      # maximum creates an overnight range.
+      # time:
+      #   minimum: 13000
+      #   maximum: 23000
+      # experience:
+      #   minimum-level: 10
+      #   maximum-level: 100
+      # economy:
+      #   minimum-balance: 100.0
+      #   maximum-balance: 100000.0
+      # combat:
+      #   in-combat: true
+    actions:
+      # Prevents the original Minecraft action when true.
+      cancel: true
+      message:
+        enabled: true
+        value: "<#FF5555>You cannot use Ender Pearls here."
+      actionbar:
+        enabled: false
+        value: ""
+      title:
+        enabled: false
+        title: ""
+        subtitle: ""
+      sound:
+        enabled: true
+        value: BLOCK_NOTE_BLOCK_BASS
+      particle:
+        enabled: false
+        value: CLOUD
+      commands:
+        # Commands do not include a leading slash.
+        # PlaceholderAPI expansion is disabled for commands by default because
+        # third-party placeholders may contain player-controlled arguments.
+        allow-placeholderapi: false
+        console: []
+        player: []
+      remove-item:
+        amount: 0
+      damage:
+        # Damage is measured in half-hearts.
+        amount: 0.0
+      potion-effect:
+        enabled: false
+        effect: SLOW
+        # Duration is measured in seconds; amplifier 0 means level I.
+        duration: 5
+        amplifier: 0
+    # Empty means nobody receives a permission bypass.
+    bypass-permission: ""
+
+  # Allows one enchanted apple, then starts a cooldown.
+  example-gapple-cooldown:
+    enabled: false
+    priority: 50
+    stop-processing: true
+    hand: ANY
+    item:
+      material: ENCHANTED_GOLDEN_APPLE
+    triggers:
+      - CONSUME
+    conditions:
+      worlds:
+        mode: WHITELIST
+        values:
+          - world
+    cooldown:
+      enabled: true
+      # Duration is measured in seconds.
+      duration: 30
+      # RULE = per rule, ITEM = per material, PLAYER = shared player cooldown.
+      scope: RULE
+      # Saves this cooldown across clean restarts when true.
+      persist: false
+      bypass-permission: ""
+      display:
+        actionbar: true
+        message: "<#FFAA00>Wait <white>{time}s <#FFAA00>before using this again."
+    bypass-permission: ""
+
+  # Limits Ender Pearls across pickups and inventory transfers.
+  example-item-limit:
+    enabled: false
+    priority: 40
+    stop-processing: false
+    hand: ANY
+    item:
+      material: ENDER_PEARL
+    triggers:
+      - PICKUP
+    inventory-limit:
+      enabled: true
+      maximum: 16
+      # MATERIAL counts every stack of the material.
+      # MATCHING_ITEM applies this rule's name/lore/model/enchantment filters.
+      # EXACT_STACK counts only stacks similar to the incoming stack.
+      count-mode: MATERIAL
+      # Optional materials that share the same total maximum.
+      # shared-materials:
+      #   - SNOWBALL
+      shared-materials: []
+      # DENY_PICKUP leaves pickup excess on the ground.
+      # DROP drops excess found during reconciliation.
+      # REMOVE permanently deletes excess.
+      excess-action: DENY_PICKUP
+    bypass-permission: ""
+
+  # No conditions section means this rule can match everywhere.
+  example-global-rule:
+    enabled: false
+    priority: 0
+    stop-processing: false
+    hand: ANY
+    item:
+      material: CHORUS_FRUIT
+    triggers:
+      - CONSUME
+    actions:
+      cancel: true
+    bypass-permission: ""
