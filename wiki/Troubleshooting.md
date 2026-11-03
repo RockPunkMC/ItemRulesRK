@@ -1,5 +1,9 @@
 # Troubleshooting and recovery
 
+## Duplicate-key warnings after updating from 1.0.0
+
+ItemRulesRK 1.0.1 fixes duplicate keys that were distributed in the English and Spanish GUI locale files. On the first load, 1.0.1 safely keeps the previously effective value, preserves unrelated customizations, and creates `messages_gui_en.yml.pre-1.0.1.bak` or `messages_gui_es.yml.pre-1.0.1.bak` before repairing an affected file. Subsequent starts and `/itemrules reload` executions should not show those warnings.
+
 ## A rule does not match
 
 1. Run `/itemrules doctor`.

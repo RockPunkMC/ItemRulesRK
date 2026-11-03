@@ -1,4 +1,4 @@
-# ItemRulesRK 1.0.0
+# ItemRulesRK 1.0.1
 
 ![ItemRulesRK banner](assets/itemrulesrk-banner.png)
 
@@ -17,7 +17,7 @@ The JAR is compiled against the Spigot 1.16.5 API. A successful build or startup
 
 ## Installation
 
-1. Put `ItemRulesRK-1.0.0.jar` in `plugins/`.
+1. Put `ItemRulesRK-1.0.1.jar` in `plugins/`.
 2. Start the server. Every public example is disabled.
 3. Run `/itemrules gui` to create rules visually, or edit `rules.yml` manually.
 4. Use `/itemrules reload` after manual YAML changes. Never use Bukkit `/reload`.

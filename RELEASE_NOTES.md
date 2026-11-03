@@ -1,3 +1,23 @@
+# ItemRulesRK 1.0.1
+
+Version 1.0.1 is a focused locale-file correctness update.
+
+## Fixed
+
+- Removed six duplicate keys from both bundled GUI locale files: `placeholder-conditions`, `placeholder-unavailable`, `console-commands`, `player-commands`, `inventory-limit`, and `stop-processing`.
+- Added a safe one-time repair for GUI locale files installed by 1.0.0. The repair preserves the value that Bukkit previously treated as effective, retains unrelated administrator customizations, and creates a `.pre-1.0.1.bak` backup before rewriting either affected file.
+- Added regression coverage that rejects duplicate GUI locale keys in future builds.
+- `/itemrules reload` no longer repeats Bukkit `YamlConstructor` duplicate-key warnings after the repair.
+
+## Update from 1.0.0
+
+1. Stop the server.
+2. Replace `ItemRulesRK-1.0.0.jar` with `ItemRulesRK-1.0.1.jar`.
+3. Start the server normally. The affected locale files are repaired automatically if required.
+4. Confirm `/itemrules reload` completes without duplicate-key warnings.
+
+---
+
 # ItemRulesRK 1.0.0
 
 Version 1.0.0 is the first public release of ItemRulesRK, combining its event-driven rule engine with a production-oriented visual editor.
