@@ -1,4 +1,4 @@
-# ItemRulesRK 1.4.0
+# ItemRulesRK 1.0.0
 
 ![ItemRulesRK banner](assets/itemrulesrk-banner.png)
 
@@ -17,7 +17,7 @@ The JAR is compiled against the Spigot 1.16.5 API. A successful build or startup
 
 ## Installation
 
-1. Put `ItemRulesRK-1.4.0.jar` in `plugins/`.
+1. Put `ItemRulesRK-1.0.0.jar` in `plugins/`.
 2. Start the server. Every public example is disabled.
 3. Run `/itemrules gui` to create rules visually, or edit `rules.yml` manually.
 4. Use `/itemrules reload` after manual YAML changes. Never use Bukkit `/reload`.
@@ -84,7 +84,7 @@ corresponding persisted change and configuration publication succeed.
 - `locale/messages_<language>.yml`: general messages.
 - `locale/messages_gui_<language>.yml`: GUI text.
 
-Existing files are not replaced. Older schemas receive `config.update.1.4.0.yml` and `rules.update.1.4.0.yml`. Legacy imported rules and locale overrides are migrated once with originals preserved.
+Existing files are not replaced. Older schemas receive `config.update.1.0.0.yml` and `rules.update.1.0.0.yml`. Legacy imported rules and locale overrides are migrated once with originals preserved.
 
 ## Metrics and update checks
 

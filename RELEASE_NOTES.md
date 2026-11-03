@@ -1,6 +1,6 @@
-# ItemRulesRK 1.4.0
+# ItemRulesRK 1.0.0
 
-Version 1.4.0 adds a production-oriented visual rule editor without replacing the event-driven 1.3.0 rule engine.
+Version 1.0.0 is the first public release of ItemRulesRK, combining its event-driven rule engine with a production-oriented visual editor.
 
 ## Added
 

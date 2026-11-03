@@ -28,7 +28,7 @@ If an interrupted multi-file transaction cannot be recovered, ItemRulesRK keeps 
 
 ## Update files
 
-Files named `*.update.1.4.0.yml` show new defaults. They do not replace your existing files. Copy only the settings you want after reviewing them.
+Files named `*.update.1.0.0.yml` show new defaults. They do not replace your existing files. Copy only the settings you want after reviewing them.
 
 ## Reporting a problem
 

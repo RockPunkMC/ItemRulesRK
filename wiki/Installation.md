@@ -9,7 +9,7 @@
 ## Install
 
 1. Stop the server completely.
-2. Put `ItemRulesRK-1.4.0.jar` inside `plugins/`.
+2. Put `ItemRulesRK-1.0.0.jar` inside `plugins/`.
 3. Start the server.
 4. Check the console for `ItemRulesRK enabled` and the loaded-rule count.
 5. Run `/itemrules doctor` to see loaded rules and optional hooks.
@@ -47,5 +47,5 @@ The reload is atomic: if the new rules contain a critical error, the last workin
 3. Replace only the JAR.
 4. Start the server and read the console.
 
-ItemRulesRK preserves customized files. When new settings are available, it creates an update file such as `config.update.1.4.0.yml` instead of replacing your configuration.
+ItemRulesRK preserves customized files. When new settings are available, it creates an update file such as `config.update.1.0.0.yml` instead of replacing your configuration.
 
